@@ -1,0 +1,251 @@
+body{
+    background-color: #f8f8f8;
+    font-family: 'inter', sans-serif;
+    color: #252525;
+    padding: 2rem;
+}
+
+main {
+    max-width: 780px;  /* Largura máxima 780px*/
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.hero .title {
+font-size: 2rem;
+font-weight: bold;
+padding-bottom: 1.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.125rem;
+    color: #828282
+}
+
+.box {
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(132, 148, 165, 0.1);
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.password {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.password .text {
+    flex: 1;
+}
+
+.password .text input {
+    font-family: 'Inconsolata', serif;
+    font-size: 3rem;
+    border: none;
+    outline: none;
+    cursor: default;
+    height: 52px; /* Altura */
+    width: 100%;  /* Largura 100%*/
+    transition: all 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.password .text input.font-sm {
+font-size: 2rem;
+}
+.password .text input.font-xs {
+font-size: 1.5rem;
+}
+.password .text input.font-xxs {
+font-size: 1rem;
+}
+
+.password .actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7; /* Configura o grau da  opacidade do item, menos visível */
+    transition: opacity 0.2s; 
+}
+
+.security-indicator {
+    height: 10px; /* Altura */
+    background-color: #ddd;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.security-indicator .bar {
+height: 10px; /* Altura */
+border-top-right-radius: 8px;
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px;
+
+transition: all 0.2s;
+}
+.security-indicator .bar.completed {
+    border-top-right-radius: 0;
+}
+.security-indicator .bar.critical {
+    background-color: #eb5757;
+}
+.security-indicator .bar.warning {
+    background-color: #f2c94c;
+}
+.security-indicator .bar.safe {
+    background-color: #27ae60;
+}
+
+.customize {
+    padding: 1rem 1.5rem;
+}
+.customize .title {
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+}
+.customize .actions {
+    display: flex;  /* O flex, basicamente colocar as coisas na horizontal */
+    gap: 3rem; /* Esse gap é a distancia */ /* REM é o tamanho de fonte do elemento-raiz do documento. */
+    color: #828282;
+}
+.customize .password-length {
+    flex: 1; /* Esse password-length nessa conf, vai espremer tudo para a direita >>> */
+}
+.customize .password-length .slider {
+    appearance: none; /* None serve para desativar a propriedade do elemento, ou seja, aqui deixa transparente */
+    -webkit-appearance: none;
+    height: 10px; /* Altura */
+    background: #bbbbbb;
+    outline: none;
+    border-radius: 8px; /* Esse border-radius faz com que a borda da parra fique arredondada */
+    width: 100%;  /* Esse width 100%, permite q barra oculpe toda a larguda da div,".customize .password-length" ganhou o "flex: 1;" */
+    opacity: 0.7; /* Configura o grau da  opacidade do item, menos visível */
+    transition: opacity 0.2s; 
+    margin-top: 1rem;
+}
+.customize .password-length .slider:hover {
+    opacity: 1; /* Configura o grau da  opacidade do item quando passo o mouse em cima, mais visível */
+}
+
+/* webkit é o renderizador do browser.  Formatação  bolinha da barra de tamanho da senha. */
+.customize .password-length .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;  /* Largura */
+    height: 25px; /* Altura */
+    border-radius: 25px; /* Faz com que a bolinha vire bolinha, ela vem quadrada */
+    background: #eb5757;  /* Cor da bolinha */
+    cursor: pointer; /* cusros */
+}
+
+/* webkit é o renderizador do mozila */
+.customize .password-length .slider::-moz-range-thumb {
+    width: 25px; /* Largura */
+    height: 25px; /* Altura */
+    border-radius: 25px; /* Faz com que a bolinha vire bolinha, ela vem quadrada */
+    background: #eb5757;  /* Cor da bolinha */
+    cursor: pointer;
+}
+
+
+/* Esse container só ficou fixo no lado direito, pq o ".customize .password-length" ganhou o "flex:1", tomando todo o espaço da div actions */
+.checkbox-container {
+    display: block; /* Bloqueia todos onde forem configurados para ficar */
+    position: relative; /* Usado quando queremos alterar a posição de um elemento. Deixando um de baixo do outro nesse caso*/
+    padding-left: 2rem; /* Padding é a distância da direita para a esquerda */
+    margin-bottom: 1rem; /* Margim é a distância de cima para baixo */
+    cursor: pointer; /* Transforma o sursos em uma "mãozinha" quando passa em cima  */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Essa conf é para inutilizar o input pois ele não serve como checkbox, por isso vamos usar o "checkmark" OBS: MALANDRAGENS DO CSS!*/
+.checkbox-container input {
+position: absolute;
+height: 0;
+width: 0;
+opacity: 0;
+cursor: pointer; /* Transforma o sursos em uma "mãozinha" quando passa em cima  */
+}
+
+.checkbox-container .checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 25px;
+width: 25px;    
+background-color: #dddddd;
+transition: all 0.2s;
+}
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #cccccc; /* Se o "input" for padrão ele fica com essa cor */
+}
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #eb5757; /* Se o "input" for checado "cheked", ele fica com essa cor */
+}
+.checkbox-container .checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+    left: 9px; /* Posição */
+    top: 5px; /* Posição */
+    width: 5px; /* Posição */
+    height: 13px; /* Posição */
+    border: solid white;  /* Esse border cria um "icone" dentro da caxinha, e com o "transform", o "icone" é rotacionado 45° */
+    border-width: 0 3px 3px 0; /* Esse border-width estabelete a gossura do ✓ dentro da caixinha */
+    transform: rotate(45deg); /* Rotaciona o "icone" dentro do border, criando o sinal de ✓ dentro da caixinha */
+}
+.checkbox-container input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.submit{
+    text-align: center; /* Alinhou o "button" no centro */
+}
+.submit button {
+    background-color: #eb5770;  /* Cor do "button" */
+    font-size: 1.400rem; /* Tamanho da fonte dentro do "button" */
+    color: #fff; /* Cor do texto dentro do "button" */
+    border: none; /* Deixou a borda transparente */
+    border-radius: 8px; /* Esse border-radius faz com que a borda da parra fique arredondada */
+    cursor: pointer; /* Transforma o sursos em uma "mãozinha" quando passa em cima  */
+    padding: 1rem 2rem;  /* Sempre que tiver  rem e rem, o primeiro e da altura o segundo da largura (1rem=alt  2rem=lag) */
+    transition: all 0.2s; /* Esse efeito serve para conf a velocidade que o "button" mudar de cor quando se passa o mouse */
+}
+/* Aqui será criado e efeito para que o "button" fique mais escuro assim que o mouse passar em cima */
+.submit button:hover {
+    background-color: #e91f41 ;
+}
+
+@media only screen and (max-width: 480px){
+.password {
+    padding: 1rem;
+}
+.password .text input {
+    font-size: 1.5rem;
+}
+.password .text input.font-sm {
+font-size: 1.2rem;
+}
+.password .text input.font-xs {
+font-size: 1rem;
+}
+.password .text input.font-xxs {
+font-size: 0.75rem;
+}
+.password .actions img {
+    width: 24px;
+}
+}
